@@ -1,0 +1,18 @@
+https://zhuanlan.zhihu.com/p/361740115
+
+gcc server.c -o server -libverbs
+gcc client.c -o client -libverbs
+
+modprobe rdma_rxe
+
+sudo rdma link add rxe_0 type rxe netdev ens33
+
+rdma link
+
+ibv_devices
+
+ibv_devinfo -d rxe_0
+
+ib_send_bw -d rxe_0
+
+ib_send_bw -d rxe_0 <server_ip>
